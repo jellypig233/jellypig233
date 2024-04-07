@@ -1,0 +1,29 @@
+from time import sleep
+
+def pomodoro_timer(work_duration=25, break_duration=5):
+    """
+    A simple Pomodoro timer that alternates between work and break intervals.
+
+    Args:
+    - work_duration (int): The duration of the work period in minutes. Default is 25 minutes.
+    - break_duration (int): The duration of the break period in minutes. Default is 5 minutes.
+    """
+    try:
+        while True:
+            # Work period
+            print(f"Work for {work_duration} minutes. Start!")
+            sleep(work_duration * 60)  # Convert minutes to seconds
+            print("Work time is over. Take a break!")
+
+            # Break period
+            print(f"Break for {break_duration} minutes. Enjoy your break!")
+            sleep(break_duration * 60)  # Convert minutes to seconds
+            print("Break time is over. Back to work!")
+            
+    except KeyboardInterrupt:
+        print("Pomodoro timer stopped.")
+
+# Example usage:
+# pomodoro_timer(25, 5)
+
+# Uncomment the example usage line to run the timer. Keep in mind that stopping the execution manually (e.g., using a KeyboardInterrupt by pressing CTRL+C in the console) is the way to stop the timer.
